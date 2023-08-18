@@ -1,7 +1,7 @@
 
 
 
-function showValue(inputValue01)
+function showValue()
 {
     const val_a = document.getElementById('val_a');
     const b_elem = document.getElementById('val_b');
@@ -9,21 +9,21 @@ function showValue(inputValue01)
     const  btn = document.getElementById('btn');
     
 
-    result.innerText = inputValue01;
+    result.innerText = val_a;
    
-    console.log(inputValue01);
+    console.log(result);
 
-   
+    btn.addEventListener('click', () => {
+        showValue(val_a.value);
+    
+        
+    })
 
 }
 
 
 
-btn.addEventListener('click', () => {
-    showValue(val_a.value);
 
-    
-})
 
 showValue();
 
