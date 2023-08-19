@@ -5,26 +5,27 @@ function showValue()
 {
     const val_a = document.getElementById('val_a');
     const b_elem = document.getElementById('val_b');
-    const result = document.getElementById('result');
+    var result = document.getElementById('result');
     const  btn = document.getElementById('btn');
     
 
-    result.innerText = val_a;
+    result.value = val_a.value + val_b.value;
    
-    console.log(result);
-
-    btn.addEventListener('click', () => {
-        showValue(val_a.value);
     
-        
-    })
 
+    
 }
 
 
+btn.addEventListener('click', () => {   
+    
+    showValue();
+
+    
+})
 
 
 
-showValue();
+
 
 
