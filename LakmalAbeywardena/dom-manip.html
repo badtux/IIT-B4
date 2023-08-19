@@ -6,7 +6,7 @@
     <title>2023-08-19</title>
 <style>
     span{
-        border: darkblue;
+        border: 2px solid darkblue;
         background-color: lightcoral;
     }
 
@@ -15,9 +15,14 @@
         visibility: visible !important;
     }
 
+    p{
+        border: red;
+        background-color: aqua;
+    }
+
     .hide
     {
-        visibility: hidden;
+        visibility:visible;
     }
 </style>
 
@@ -29,6 +34,26 @@
     </p>
     <p><span id="myId" class="show" hidden  style="visibility: hidden;"> call NODE </span></p>
 
-    <p><span id="myId" class="hide" hidden  >  NODE </span></p>
+    <p><span id="myId" class="hide" id="hide" style="visibility:visible;">  NODE </span></p>
+
+<button class="btn" onclick="showMe()">Show Me</button>
+
+
+<script>
+    function showMe()
+    {
+        const spanEl = document.getElementById('hide');
+        const pEl  = document.getElementById('doc');
+        spanEl.innerHTML = pEl.innerHTML;
+        spanEl.innerHTML='';
+        
+spanEl.classList.add('hide');
+        console.log('copied');
+        
+
+        
+
+    }
+</script>
 </body>
 </html>
