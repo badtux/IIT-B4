@@ -17,10 +17,22 @@ const db = new sqlite3.Database('contacts.db', err => {
       CREATE TABLE IF NOT EXISTS contacts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
-        email TEXT
+        phone TEXT
       )
     `);
   }
+});
+
+app.delete('/contacts/:id', (req, res) => {
+  const contactId = req.params.id;
+  db.run('DELETE FROM contacts WHERE id = ?', contactId, err => {
+    if (err) {
+      console.error('Error deleting contact:', err.message);
+      res.status(500).send('Server Error');
+    } else {
+      res.sendStatus(200);
+    }
+  });
 });
 
 app.get('/contacts', (req, res) => {
@@ -35,8 +47,8 @@ app.get('/contacts', (req, res) => {
 });
 
 app.post('/add-contact', (req, res) => {
-  const { name, email } = req.body;
-  db.run('INSERT INTO contacts (name, email) VALUES (?, ?)', [name, email], err => {
+  const { name, phone } = req.body;
+  db.run('INSERT INTO contacts (name, phone) VALUES (?, ?)', [name, phone], err => {
     if (err) {
       console.error('Error adding contact:', err.message);
       res.status(500).send('Server Error');
