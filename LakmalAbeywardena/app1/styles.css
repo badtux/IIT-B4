@@ -11,13 +11,16 @@ body {
   
   .container {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    padding:180px;
+    border-radius: 5px solid blue;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+   
   }
   
   h1 {
     text-align: center;
+    font-size: 50px;
   }
   
   form {
@@ -29,13 +32,13 @@ body {
   input[type="text"],
   input[type="email"] {
     flex: 1;
-    padding: 10px;
+    padding: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
   
   button {
-    padding: 10px 20px;
+    padding: 10px 30px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -50,6 +53,7 @@ body {
   #contactList {
     border-top: 1px solid #ccc;
     padding-top: 20px;
+    font-size: 30px;
   }
   
   
