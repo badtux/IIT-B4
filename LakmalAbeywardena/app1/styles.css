@@ -1,20 +1,33 @@
+*
+{
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+   
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background: url('high.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+    
   }
   
   .container {
-    background-color: #fff;
+    background-color: #b8b3b3;
     padding:180px;
-    border-radius: 5px solid blue;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    
+    border: 5px solid rgb(166, 166, 170);
+    border-radius: 25px;
+    box-shadow: 10px 20px 10px rgba(73, 70, 70, 0.1);
+    background: transparent;
+    backdrop-filter:blur(20px);
    
   }
   
@@ -35,6 +48,8 @@ body {
     padding: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 22px;
+    font-weight: bold;
   }
   
   button {
@@ -44,6 +59,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    justify-content: end;
   }
   
   button:hover {
@@ -51,9 +67,18 @@ body {
   }
   
   #contactList {
+    
     border-top: 1px solid #ccc;
-    padding-top: 20px;
+   
+    padding: 20px;
     font-size: 30px;
+    border: 5px solid rgb(245, 245, 245);
+    border-radius: 25px;
+    justify-content: space-between;
   }
   
-  
+  #contactList button
+  {
+    margin-left: 80%;
+    
+  }
