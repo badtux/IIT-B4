@@ -28,30 +28,47 @@ body {
     box-shadow: 10px 20px 10px rgba(73, 70, 70, 0.1);
     background: transparent;
     backdrop-filter:blur(20px);
+    color: rgb(218, 207, 207);
    
   }
   
   h1 {
+    top: 80%;
     text-align: center;
     font-size: 50px;
+    color: white;
+    padding-bottom: 80px;
+    
   }
   
   form {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    padding-bottom: 20px;
   }
   
   input[type="text"],
   input[type="email"] {
     flex: 1;
     padding: 30px;
-    border: 1px solid #ccc;
+  
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    background: transparent;
     border-radius: 5px;
     font-size: 22px;
     font-weight: bold;
+    color: white;
+   
   }
-  
+
+  input[type="text"]:hover,
+  input[type="email"]:hover {
+    border-bottom: 1px solid rgb(3, 253, 3);
+
+  }
   button {
     padding: 10px 30px;
     background-color: #007bff;
@@ -65,6 +82,7 @@ body {
   button:hover {
     background-color: #0056b3;
   }
+
   
   #contactList {
     
