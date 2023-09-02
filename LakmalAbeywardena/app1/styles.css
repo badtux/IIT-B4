@@ -52,21 +52,26 @@ body {
   input[type="email"] {
     flex: 1;
     padding: 30px;
-  
+    
+    background: transparent;
     border: none;
     outline: none;
     border-bottom: 1px solid white;
-    background: transparent;
     border-radius: 5px;
     font-size: 22px;
     font-weight: bold;
-    color: white;
+    
    
   }
 
   input[type="text"]:hover,
   input[type="email"]:hover {
-    border-bottom: 1px solid rgb(3, 253, 3);
+    background: transparent;
+    border: none;
+    outline: none;
+   
+   border-bottom: 1px solid rgb(3, 253, 3);
+   
 
   }
   button {
