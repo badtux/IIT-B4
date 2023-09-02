@@ -11,3 +11,12 @@ myExpenses.run(`CREATE TABLE IF NOT EXISTS expenses (
         type TEXT,
         amount REAL,
         whom Text)`);
+
+        myExpenses.run('INSERT INTO expenses (type, amount, whom) VALUES (?,?,?)','Travel', 1250.65, 'Samudra');
+
+        myExpenses.all(`SELECT type, amount, whom FROM expenses`, (err, rows) => {
+            rows.forEach((row) => {
+                console.log(row);
+
+            });
+        });
