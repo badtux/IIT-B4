@@ -34,7 +34,7 @@ myExpenses.run(`CREATE TABLE IF NOT EXISTS expenses (
         });
 
         myExpenses.run(`UPDATE expenses SET type = $newType, amount = $newAmount WHERE  id = $id`,{
-        $newType : 'ACCOMODATION', $newAmount : 8500, $id: 4 }, (err) =>{
+        $newType : 'ACCOMODATION', $newAmount : 8500, $id: 10 }, (err) =>{
 
         });
 
