@@ -23,7 +23,17 @@ myExpences.run(`CREATE TABLE IF NOT EXISTS expences (
     });
 
     myExpences.run(`DELETE FROM expences WHERE id = $id`, {$id : 1}, (err) => {
-        console.log(err);
+        console.log(this);
+    })
+
+    myExpences.run('UPDATe expences SET type = $newType, amount = $newAmount WHERE id = $id', {
+            $newType : 'ACCOMODATION', 
+            $newAmount : 85000, 
+            $id : 9 
+        
+        }, (err) => {
+            console.log(err);
+        
     })
 
     myExpences.close();
