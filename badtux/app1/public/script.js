@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const addForm = document.getElementById('addForm');
-  const nameInput = document.getElementById('name');
-  const phoneInput = document.getElementById('phone');
-  const contactList = document.getElementById('contactList');
-
+$( document ).ready(function() {
+  const addForm = $('#addForm');
+  const nameInput = $('#name');
+  const phoneInput = $('#phone');
+   contactList = $('#contactList');
+  
   function deleteContact(id) {
     fetch(`/contacts/${id}`, { method: 'DELETE' })
       .then(() => refreshContactList());
@@ -19,15 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
           item.innerHTML = `
             <p><strong>Name:</strong> ${contact.name}</p>
             <p><strong>Phone:</strong> ${contact.phone}</p>
-            <button onclick="deleteContact(${contact.id})">Delete</button>
+            <button class="del-button" data-id="${contact.id}">Delete</button>
           `;
-          contactList.appendChild(item);
+          item.appendTo(contactList);
         });
       });
   }
 
-  addForm.addEventListener('submit', event => {
-    event.preventDefault();
+  addForm.on('submit', function(e){
+    e.preventDefault();
     const name = nameInput.value;
     const phone = phoneInput.value;
     fetch('/add-contact', {
@@ -42,5 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   refreshContactList();
+
+  const delButtons = $('.del-button');
+  delButtons.on('click', function(e){
+    console.log('clicked');
+  });
+
 });
 
