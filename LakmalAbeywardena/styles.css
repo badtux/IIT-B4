@@ -1,0 +1,107 @@
+*
+{
+  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+body {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('high.jpg')no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  .container {
+    background-color: #b8b3b3;
+    padding:180px;
+    border: 5px solid rgb(166, 166, 170);
+    border-radius: 25px;
+    box-shadow: 10px 20px 10px rgba(73, 70, 70, 0.1);
+    background: transparent;
+    backdrop-filter:blur(20px);
+    color: rgb(218, 207, 207);
+   
+  }
+  
+  h1 {
+    top: 80%;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    padding-bottom: 80px;
+    
+  }
+  
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    flex: 1;
+    padding: 30px;
+    
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    
+   
+  }
+
+  input[type="text"]:hover,
+  input[type="email"]:hover {
+    background: transparent;
+    border: none;
+    outline: none;
+   
+   border-bottom: 1px solid rgb(3, 253, 3);
+   
+
+  }
+  button {
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: end;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  
+  #contactList {
+    
+    border-top: 1px solid #ccc;
+   
+    padding: 20px;
+    font-size: 30px;
+    border: 5px solid rgb(245, 245, 245);
+    border-radius: 25px;
+    justify-content: space-between;
+  }
+  
+  #contactList button
+  {
+    margin-left: 80%;
+    
+  }
