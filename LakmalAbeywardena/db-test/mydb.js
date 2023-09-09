@@ -38,4 +38,4 @@ myExpenses.run(`CREATE TABLE IF NOT EXISTS expenses (
 
         });
 
-        //myExpenses.close();
+        //myExpenses.close(); 
