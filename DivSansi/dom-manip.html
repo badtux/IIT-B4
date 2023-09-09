@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <style>
+            span {
+                border: darkblue;
+                background-color: lightblue;
+
+            }
+            p{
+                border: red;
+                background-color: lightpink;
+            }
+            .show{
+                visibility: visible !important;
+            }
+            .hide{
+                visibility: hidden;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <p>
+            <span id="myid" class="Show">
+                web Development
+            </span>
+            </p>
+    
+            <p id="myp"> second para</p>
+            
+        <select id="My-select" name="state">
+            <option value="Al">alabama</option>
+            <option value="wy">wyoming</option>
+        </select>
+
+        <button onclick="btn()">Copy</button>
+        <script>
+            function btn(){
+                const spanElem=document.getElementById('myid');
+                const pElem=document.getElementById('my_para');
+                pElem.innerHTML=spanElem.innerHTML;
+                /*spanElem.innerHTML=' ';*/
+                spanElem.ClassList.add(hide);
+                Console.log('copied');
+                
+            }
+        </script>
+    </body>
+</html>
