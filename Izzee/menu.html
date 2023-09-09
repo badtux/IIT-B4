@@ -3,12 +3,31 @@
 
 <head>
     <style>
-        .menu a {
-            border: 1px solid purple;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: medium;
-            color: blue;
+        .menu li {
+            border: 10px solid purple;
+            width: 200px;
+            background-image: u;
+            background-color: pink;
+            text-align: center;
+            margin-bottom: 25px;
+            margin-right: 10px;
+            border-radius: 10px;
             padding: 10px;
+            display: inline;
+
+        }
+        .menu li :hover{
+            background-color: aqua; 
+
+        }
+        .menu a {
+            border: 1px solid red;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+            color: rgb(46, 10, 112);
+            padding: 1px;
+            text-decoration: none;
+            font-style: italic;
         }
 
         #topsection .menu {
@@ -19,7 +38,7 @@
 
 <body>
     <div id="top section">
-        <ul>
+        <ul class="menu">
             <li><a target="blank" href="https://spacex.com">SpaceX</a></li>
             <li><a target="blank" href="https://tesla.com">Tesla</a></li>
             <li> <a target="blank" href="https://chat.openai.com">ChatGPT</a></li>
