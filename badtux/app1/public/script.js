@@ -1,9 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const addForm = document.getElementById('addForm');
-  const nameInput = document.getElementById('name');
-  const emailInput = document.getElementById('email');
-  const contactList = document.getElementById('contactList');
-
+$( document ).ready(function() {
+  const addForm = $('#addForm');
+  const nameInput = $('#name');
+  const phoneInput = $('#phone');
+   contactList = $('#contactList');
+  
+  function deleteContact(id) {
+    fetch(`/contacts/${id}`, { method: 'DELETE' })
+      .then(() => refreshContactList());
+  }
+  
   function refreshContactList() {
     fetch('/contacts')
       .then(response => response.json())
@@ -13,34 +18,35 @@ document.addEventListener('DOMContentLoaded', () => {
           const item = document.createElement('div');
           item.innerHTML = `
             <p><strong>Name:</strong> ${contact.name}</p>
-            <p><strong>Email:</strong> ${contact.email}</p>
-            <button onclick="deleteContact(${contact.id})">Delete</button>
+            <p><strong>Phone:</strong> ${contact.phone}</p>
+            <button class="del-button" data-id="${contact.id}">Delete</button>
           `;
-          contactList.appendChild(item);
+          item.appendTo(contactList);
         });
       });
   }
 
-  function deleteContact(id) {
-    fetch(`/contacts/${id}`, { method: 'DELETE' })
-      .then(() => refreshContactList());
-  }
-
-  addForm.addEventListener('submit', event => {
-    event.preventDefault();
+  addForm.on('submit', function(e){
+    e.preventDefault();
     const name = nameInput.value;
-    const email = emailInput.value;
+    const phone = phoneInput.value;
     fetch('/add-contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`
+      body: `name=${encodeURIComponent(name)}&phone=${encodeURIComponent(phone)}`
     }).then(() => {
       nameInput.value = '';
-      emailInput.value = '';
+      phoneInput.value = '';
       refreshContactList();
     });
   });
 
   refreshContactList();
+
+  const delButtons = $('.del-button');
+  delButtons.on('click', function(e){
+    console.log('clicked');
+  });
+
 });
 
