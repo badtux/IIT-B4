@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense tracker</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Add new expense</h1>
+        <form id="exp-add-frm">
+            <div class="form-field">
+                <label>Expense Category</label>
+                <select id="exp-category">
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Education</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label>Amount</label>
+                <input id="exp-amount" type="number">
+            </div>
+            <div class="form-field">
+                <label>Expense on</label>
+                <input id="exp-account" type="text">
+            </div>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
