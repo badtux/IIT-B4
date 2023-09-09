@@ -35,7 +35,3 @@
     });
 
     myExpenses.close();
-
-    app.post('/', (req, res) => {
-
-    }
