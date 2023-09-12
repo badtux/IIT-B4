@@ -1,14 +1,14 @@
 const express = require('express');
-//const bodyParser = require('body-parser');
-//const sqlite3 = require('sqlite3').verbose();
+const bodyParser = require('body-parser');
+const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
 const port = 3000;
 
-//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-/*const db = new sqlite3.Database('contacts.db', err => {
+const db = new sqlite3.Database('contacts.db', err => {
   if (err) {
     console.error('Database connection error:', err.message);
   } else {
@@ -17,11 +17,11 @@ app.use(express.static('public'));
       CREATE TABLE IF NOT EXISTS contacts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
-        email TEXT
+        phone TEXT
       )
     `);
   }
-});*/
+});
 
 app.get('/contacts', (req, res) => {
   db.all('SELECT * FROM contacts', (err, rows) => {
@@ -34,7 +34,7 @@ app.get('/contacts', (req, res) => {
   });
 });
 
-/*app.post('/add-contact', (req, res) => { 
+app.post('/add-contact', (req, res) => { 
   const { name, email } = req.body;
   db.run('INSERT INTO contacts (name, email) VALUES (?, ?)', [name, email], err => {
     if (err) {
@@ -44,7 +44,7 @@ app.get('/contacts', (req, res) => {
       res.redirect('/contacts');
     }
   });
-});*/
+});
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
