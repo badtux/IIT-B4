@@ -3,26 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Manager</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Expences</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Expenses Category</h1>
-    <form >
-        <div class="form-field">
-            <label >Expenses Category</label>
-            <select>
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Education</option>
-            </select>
-
-        </div>
-        
+    <h1>My Expences</h1>
+    <form id="addForm">
+      <select name="Type" id="type" required>
+        <option value="other">Other</option>
+        <option value="food">Food</option>
+        <option value="accomodation">Accomodation</option>
+        <option value="travel">Travel</option>
+        <option value="drink">Drinks</option>
+      </select>
+      <input type="text" id="amount" placeholder="Amount($)" required>
+      
+      <button type="submit">Add Contact</button>
     </form>
     <div id="contactList"></div>
   </div>
   <script src="script.js"></script>
 </body>
 </html>
+
