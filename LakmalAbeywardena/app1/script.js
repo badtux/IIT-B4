@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactList = document.getElementById('contactList');
   
     function refreshContactList() {
-      fetch('/contacts')
+      fetch('/contacts') 
         .then(response => response.json())
         .then(data => {
           contactList.innerHTML = '';
