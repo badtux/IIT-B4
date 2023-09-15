@@ -17,7 +17,7 @@ const db = new sqlite3.Database('contacts.db', err => {
       CREATE TABLE IF NOT EXISTS contacts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
-        email TEXT
+        phone TEXT
       )
     `);
   }
@@ -34,7 +34,7 @@ app.get('/contacts', (req, res) => {
   });
 });
 
-app.post('/add-contact', (req, res) => {
+app.post('/add-contact', (req, res) => { 
   const { name, email } = req.body;
   db.run('INSERT INTO contacts (name, email) VALUES (?, ?)', [name, email], err => {
     if (err) {
@@ -50,3 +50,4 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
+ 
