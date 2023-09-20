@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Two-Column Form </title> 
+    </head>
+    <body>
+        <form>
+            <p>Name</p>
+            <p><input type="text" name="Name" id="Name"></p>
+            <p>Surname</p>
+            <p><input type="text" name="Surame" id="Surame"></p>
+            <p>Age</p>
+            <p><input type="number" name="Age" id="Age"></p>
+
+            <p> <label for="Description"></label> <br>
+                <textarea id="Description" name="Description" rows="10" cols="50">
+                </textarea>
+
+            <!-- Checkbox -->
+            <p>Hobby</p>
+        <label>Reading:</label>
+        <input type="checkbox" id="Reading" name="Hobby[]" value="Reading">
+        <label>Gardening:</label>
+        <input type="checkbox" id="Gardening" name="Hobby[]" value="Gardening">
+
+
+            <p><input type="reset" value="Clear form"></p>
+            <p><input type="submit" value="Submit form"></p>
+            
+        </form>    
+    </body>
+</html>

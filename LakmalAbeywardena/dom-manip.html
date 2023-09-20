@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023-08-19</title>
+<style>
+    span{
+        border: 2px solid darkblue;
+        background-color: lightcoral;
+    }
+
+    .show
+    {
+        visibility: visible !important;
+    }
+
+    p{
+        border: red;
+        background-color: aqua;
+    }
+
+    .hide
+    {
+        visibility:visible;
+    }
+</style>
+
+</head>
+<body>
+    <p id="doc">HTML Document </p>
+    <p>
+        
+    </p>
+    <p><span id="myId" class="show" hidden  style="visibility: hidden;"> call NODE </span></p>
+
+    <p><span id="myId" class="hide" id="hide" style="visibility:visible;">  NODE </span></p>
+
+<button class="btn" onclick="showMe()">Show Me</button>
+
+<input type="button" value="Copy" name="action">
+
+
+<script>
+    function showMe()
+    {
+        const spanEl = document.getElementById('hide');
+        const pEle  = document.getElementById('doc');
+        const btn = document.getElementsByName('action');
+        spanEl.innerHTML = pEle.innerHTML;
+        //spanEl.innerHTML='';
+
+//spanEl.classList.add('hide');
+        console.log('copied');
+        spanEl.classList.replace('show','hide');
+
+        
+
+        
+
+    }
+</script>
+</body>
+</html>
