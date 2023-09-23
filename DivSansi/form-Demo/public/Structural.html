@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Styled HTML Page</title>
+    <style>
+       
+        body, h1, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+     
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+  
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+       
+        .container {
+            display: flex;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+        main {
+            flex: 2;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+      
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+      
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                max-width: 90%;
+            }
+            aside, main {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h2>Aside</h2>
+            <p>This is the aside content.</p>
+        </aside>
+
+        <main style="border: 1px rgb(255, 0, 55) solid;">
+            <section>
+                <h2>Section 1</h2>
+                <p>This is the main content of Section 1.</p>
+            </section>
+
+            <section>
+                <h2>Section 2</h2>
+                <p>This is the main content of Section 2.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Footer &copy; 2023</p>
+    </footer>
+</body>
+</html>

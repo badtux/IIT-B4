@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two-Column Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            width: 45%;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .form-group .input-container {
+            width: 50%;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Two-Column Form</h1>
+    <div class="container">
+        <form action="submit.php" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <div class="input-container">
+                    <input type="text" id="name" name="name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname:</label>
+                <div class="input-container">
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <div class="input-container">
+                    <input type="number" id="age" name="age" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <div class="input-container">
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobby:</label>
+                <div class="input-container">
+                    <input type="checkbox" id="reading" name="hobbies[]" value="Reading">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" id="gardening" name="hobbies[]" value="Gardening">
+                    <label for="gardening">Gardening</label>
+                    <input type="checkbox" id="cooking" name="hobbies[]" value="Cooking">
+                    <label for="cooking">Cooking</label>
+                    <input type="checkbox" id="painting" name="hobbies[]" value="Painting">
+                    <label for="painting">Painting</label>
+                    <input type="checkbox" id="sports" name="hobbies[]" value="Sports">
+                    <label for="sports">Sports</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="input-container">
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="nonbio" name="gender" value="Bio-Sex">
+                    <label for="nonbio">Bio-Sex</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="skillLevel">Skill Level:</label>
+                <div class="input-container">
+                    <input type="range" id="skillLevel" name="skillLevel" min="0" max="100">
+                </div>
+            </div>
+            <div class="btn-container">
+                <input type="submit" class="btn" value="Submit">
+                <input type="reset" class="btn" value="Reset">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
