@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial_scale=1.0">
+        <title> Two-Column Form</title>
+        <link rel="stylesheet"href="formstyle.css">
+   </head>
+
+    <body>
+        <form action="submit.php" method="post">
+            <h1>Two Column Form</h1>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="fname" name="fname"><br></td>
+            </tr>
+            <tr>
+                <td>Surname</td>
+                <td><input type="text" id="lname" name="lname"><br></td>
+            </tr>
+            <tr>
+                <td>age</td>
+                <td><input type="number" id="age" name="age"><br></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><textarea name="description" id="description" row="5" cols="20"></textarea><br><br>
+                </td>
+            </tr>
+        
+            <tr>
+                <td>Hobby</td>
+                <td><input type="checkbox"id="reading"name="reading">
+                    <label for="reading">Reading</label><br>
+                    <input type="checkbox"id="Gardening"name="Gardening">
+                    <label for="Gardening">Gardening</label><br>
+                    <input type="checkbox"id="Cooking"name="Cooking">
+                    <label for="Cooking">Cooking</label><br>
+                    <input type="checkbox"id="Painting"name="Painting">
+                    <label for="Painting">Painting</label><br>
+                    <input type="checkbox"id="Sports"name="Sports">
+                    <label for="Sports">Sports</label><br><br>
+                    
+        </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td> <input type="radio"name="male"id="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio"name="female"id="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio"name="non-binary"id="non-binary">
+                    <label for="non-binary">Non-Binary</label><br></td>
+            </tr>
+        </table>
+
+                <div style="text-align: center;">
+                    <input type="Submit"value="Submit">
+                    <input type="reset"value="Reset">
+                </div>   
+        </form>
+    
+    </body>
+</html>
+
+</DOCTYPE>
