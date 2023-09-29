@@ -1,6 +1,6 @@
 const sqlite3 = require('sqlite3');
 const express = require('express');
-// const myDb = new sqlite3.Database('chat.sqlite3');
+const myDb = new sqlite3.Database('chat.sqlite3');
 const myContacts = new sqlite3.Database('contacts.sqlite3');
 
 const port = 3000;
@@ -8,11 +8,11 @@ const app = express();
 
 app.use(express.static('public'));
 
-let name = document.getElementById('name');
-let email = document.getElementById('email');
-let message = document.getElementById('message');
 let addForm = document.getElementById('addForm');
-const date = new Date();
+// let name = document.getElementById('name');
+// let email = document.getElementById('email');
+// let message = document.getElementById('message');
+// const date = new Date();
 
 addForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -21,10 +21,36 @@ addForm.addEventListener("submit", (e) => {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT, 
         email TEXT,
-        time TEXT )`);
+        time TEXT 
+    )`, (err) => {
+        if (err) {
+            console.error('Error creating table:', err.message);
+        } else {
+            console.log('Table "contacts" created successfully.');
+        }
+    });
 
-        myContacts.run(`INSERT INTO contacts (name, email, time) 
-                    VALUES (?,?,?)`, name,  email, date);
+    app.post('/addContact', (req, res) => {
+        const { name, email, message } = req.body;
+        const date = new Date().toISOString();
+      
+        myContacts.run(
+          'INSERT INTO contacts (name, email, message, time) VALUES (?, ?, ?, ?)',
+          [name, email, message, date],
+          (err) => {
+            if (err) {
+              console.error('Error inserting into contacts:', err.message);
+              res.status(500).send('Internal Server Error');
+            } else {
+              console.log('Contact added successfully');
+              res.status(200).send('Contact added successfully');
+            }
+          }
+        );
+      });
+
+    //     myContacts.run(`INSERT INTO contacts (name, email, time) 
+    //                 VALUES (?,?,?)`, name,  email, date);
 });
 
 
