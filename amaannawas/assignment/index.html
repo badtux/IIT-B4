@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Final Assignment</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Contact Us</h1>
+            <form id="addForm">
+                <p>Name:</p>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <p>Email:</p>
+                <input type="text" id="email" placeholder="Your Email" required>
+                <p>Message:</p>
+                <textarea id="message" name="message" rows="6" cols="30" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="contactList"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
